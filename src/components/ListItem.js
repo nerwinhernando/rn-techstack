@@ -1,11 +1,14 @@
 import React from 'react';
 import { Text } from 'react-native';
+import { connect } from 'react-redux';
 import { CardSection } from './common';
+import * as actions from '../actions';
 
 class ListItem extends React.Component {
     render() {
         const { titleStyle } = styles;
-        //console.log(this.props.library)
+        //console.log(this.props.library);
+        console.log(this.props);
         return(
             <CardSection>
                 <Text style={titleStyle}>
@@ -22,5 +25,5 @@ const styles = {
         paddingLeft: 15
     }
 };
-
-export default ListItem;
+// no mapstatetoprops so it is null
+export default connect(null, actions)(ListItem);
